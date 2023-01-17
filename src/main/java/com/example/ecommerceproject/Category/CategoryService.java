@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CategoryService {
-    @Autowired
+
     private CategoryRepository categoryRepository;
 
     public List<Category> getAllCategories(){
