@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/category")
 @RequiredArgsConstructor
 public class CategoryController {
-    private CategoryService categoryService;
+    private final CategoryService categoryService;
 
     @GetMapping("/getAllCategories")
     @ResponseStatus(HttpStatus.OK)
@@ -21,7 +21,7 @@ public class CategoryController {
 
     @PostMapping("/create-productCategory")
     @ResponseStatus(HttpStatus.CREATED)
-    public Category getCategoryService(Category category) {
+    public Category createCategory(@RequestBody Category category) {
         return categoryService.saveCategory(category);
     }
 }
